@@ -1,0 +1,25 @@
+backend:
+  name: github
+  repo: yishikaw42/kocca-ckl-tokyo2026/tree/main/kocca # 💡ここをご自身の「GitHubのユーザー名/リポジトリ名」に書き換えてください！
+  branch: main
+
+media_folder: "images" # 画像を保存するフォルダ
+public_folder: "images"
+
+collections:
+  - name: "companies"
+    label: "入居企業データ"
+    folder: "data/companies" # 各企業のデータを保存する場所
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "ジャンル", name: "category", widget: "select", options: ["webtoon", "music", "game", "video", "musical"] }
+      - { label: "企業名", name: "title", widget: "string" }
+      - { label: "フリガナ", name: "ruby", widget: "string" }
+      - { label: "企業説明", name: "desc", widget: "text" }
+      - { label: "設立年", name: "established", widget: "string" }
+      - { label: "主要事業", name: "business", widget: "string" }
+      - { label: "代表作", name: "works", widget: "string" }
+      - { label: "🤝 日本企業との協業希望", name: "matching", widget: "text" }
+      - { label: "公式サイトURL", name: "website", widget: "string", required: false }
+      - { label: "問い合わせ先", name: "contact", widget: "string" }
